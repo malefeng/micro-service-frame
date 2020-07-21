@@ -10,7 +10,7 @@
   <name>micro-server-frame</name>
 
   <modules>
-    <module>gateway</module>
+<!--    <module>gateway</module>-->
     <module>authority</module>
     <module>eureka</module>
   </modules>
