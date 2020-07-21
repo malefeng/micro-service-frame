@@ -1,10 +1,16 @@
 version: "2"
 services:
   eureka:
-#    image: malefeng/eureka
-    build: ./eureka/Dockerfile
+    container_name: eureka
+    build:
+      context: ./eureka/
+      dockerfile: Dockerfile
+
   authority:
-    build: ./authority/Dockerfile
+    container_name: authority
+    build:
+      context: ./authority/
+      dockerfile: Dockerfile
     links:
       - eureka
     depends_on:
