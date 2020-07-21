@@ -1,4 +1,13 @@
 version: 2
-service:
+services:
   eureka:
-    image: malefeng/eureka
+#    image: malefeng/eureka
+    build: ./eureka
+  authority:
+    build: ./authority
+    links:
+      - eureka
+    depends_on:
+      - eureka
+    ports:
+      - "8081:8081"
