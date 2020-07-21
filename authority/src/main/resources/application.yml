@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: authority
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: http://localhost:8841
+#  zipkin:
+#    base-url: http://localhost:9411
+#    sender:
+#      type: web
+#  sleuth:
+#    web:
+#      client:
+#        enabled: true
+#    sampler:
+#      probability: 1.0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
