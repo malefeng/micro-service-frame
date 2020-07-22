@@ -34,6 +34,7 @@ spring:
 #        port: 8890
 #      eager: true
 
+
 management:
   endpoints:
     web:
@@ -42,3 +43,8 @@ management:
   endpoint:
     health:
       show-details: always
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:8000/eureka
