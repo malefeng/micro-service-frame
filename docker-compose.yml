@@ -6,6 +6,7 @@ services:
     build: ./eureka
     ports:
       - "8000:8000"
+    network_mode: host
 
   gateway:
     image: gateway
@@ -13,10 +14,12 @@ services:
     build: ./gateway
     ports:
       - "8080:8080"
-    links:
-      - eureka
+#    links:
+#      - eureka
+#      - authority
     depends_on:
       - eureka
+    network_mode: host
 
   authority:
     image: authority
@@ -24,7 +27,8 @@ services:
     build: ./authority
     ports:
         - "8081:8081"
-    links:
-      - eureka
+#    links:
+#      - eureka
     depends_on:
       - eureka
+    network_mode: host
