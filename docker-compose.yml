@@ -6,35 +6,22 @@ services:
     build: ./eureka
     ports:
       - "8000:8000"
-#    network_mode: host
 
   gateway:
     image: gateway
     container_name: gateway
     build: ./gateway
-    environment:
-      - eureka_host = eureka
     ports:
       - "8080:8080"
-    links:
-      - eureka
-      - authority
     depends_on:
-      - eureka
-#    network_mode: host
+      - eureka:localhost
 
 
   authority:
     image: authority
     container_name: authority
     build: ./authority
-    environment:
-      - eureka_host = eureka
     ports:
         - "8081:8081"
-    external_links:
-      - eureka
-      - gateway
     depends_on:
-      - eureka
-#    network_mode: host
+      - eureka:localhost
