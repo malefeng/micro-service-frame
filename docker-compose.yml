@@ -13,7 +13,7 @@ services:
     container_name: gateway
     build: ./gateway
     environment:
-      - eureka_url = http://eureka:8000/eureka/
+      - eureka_uri = eureka:8000
     ports:
       - "8080:8080"
     external_links:
@@ -23,12 +23,13 @@ services:
       - eureka
 #    network_mode: host
 
+
   authority:
     image: authority
     container_name: authority
     build: ./authority
     environment:
-      - eureka_url = http://eureka:8000/eureka/
+      - eureka_uri = eureka:8000
     ports:
         - "8081:8081"
     external_links:
