@@ -14,7 +14,7 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - eureka:localhost
+      - eureka
 
 
   authority:
@@ -24,4 +24,4 @@ services:
     ports:
         - "8081:8081"
     depends_on:
-      - eureka:localhost
+      - eureka
