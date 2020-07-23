@@ -13,10 +13,10 @@ services:
     container_name: gateway
     build: ./gateway
     environment:
-      - eureka_uri = eureka:8000
+      - eureka_host = eureka
     ports:
       - "8080:8080"
-    external_links:
+    links:
       - eureka
       - authority
     depends_on:
@@ -29,7 +29,7 @@ services:
     container_name: authority
     build: ./authority
     environment:
-      - eureka_uri = eureka:8000
+      - eureka_host = eureka
     ports:
         - "8081:8081"
     external_links:

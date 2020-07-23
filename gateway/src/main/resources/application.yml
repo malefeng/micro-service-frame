@@ -47,4 +47,4 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://${eureka_uri:eureka:8000}/eureka
+      defaultZone: http://${eureka_host:localhost}:8000/eureka
